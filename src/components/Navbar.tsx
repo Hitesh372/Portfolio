@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { profile } from "@/data/profile";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +50,7 @@ export default function Navbar() {
                             </a>
                         ))}
                         <a
-                            href="/resume.pdf"
+                            href={profile.resumeUrl}
                             download="Resume.pdf"
                             className="px-5 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all flex items-center gap-2 text-sm font-bold"
                         >
@@ -98,7 +99,7 @@ export default function Navbar() {
                                 </a>
                             ))}
                             <a
-                                href="/resume.pdf"
+                                href={profile.resumeUrl}
                                 download="Resume.pdf"
                                 className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all font-bold"
                             >

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/data/profile";
 import { useState, useEffect } from "react";
+import { getAssetPath } from "@/lib/utils";
 
 export default function Hero() {
     const roles = [
@@ -81,7 +82,7 @@ export default function Hero() {
                                 <ArrowRight className="w-5 h-5" />
                             </a>
                             <a
-                                href="/resume.pdf"
+                                href={profile.resumeUrl}
                                 download="Resume.pdf"
                                 className="px-8 py-4 rounded-full bg-card border border-white/10 hover:border-primary/50 text-foreground font-bold text-lg transition-all flex items-center gap-2 hover:bg-white/5"
                             >
@@ -126,7 +127,7 @@ export default function Hero() {
                         <div className="relative w-full aspect-square animate-float">
                             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-[80px] -z-10" />
                             <img
-                                src="/hero-avatar.png"
+                                src={getAssetPath("/hero-avatar.png")}
                                 alt="Abstract Tech Avatar"
                                 className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(var(--primary),0.3)]"
                             />

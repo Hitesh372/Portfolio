@@ -1,3 +1,5 @@
+import { getAssetPath } from "@/lib/utils";
+
 export const profile = {
     name: "Hitesh Jangid",
     role: "QA Automation Engineer | SDET",
@@ -14,5 +16,5 @@ export const profile = {
         email: "Jangidh212@gmail.com",
         location: "India",
     },
-    resumeUrl: "/resume.pdf",
+    resumeUrl: getAssetPath("/resume.pdf"),
 };
