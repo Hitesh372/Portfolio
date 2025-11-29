@@ -6,6 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getAssetPath(path: string) {
-    const basePath = process.env.NODE_ENV === "production" ? "/Portfolio" : "";
-    return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
+    return path.startsWith("/") ? path : `/${path}`;
 }
