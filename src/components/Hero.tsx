@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/data/profile";
 import { useState, useEffect } from "react";
-import { getAssetPath } from "@/lib/utils";
 
 export default function Hero() {
     const roles = [
@@ -48,13 +47,13 @@ export default function Hero() {
             <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px] animate-spotlight"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div className="flex flex-col items-center justify-center gap-12">
                     {/* Text Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="flex-1 text-center lg:text-left"
+                        className="flex-1 text-center max-w-4xl mx-auto"
                     >
                         <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary font-medium text-sm">
                             Available for new opportunities
@@ -69,11 +68,11 @@ export default function Hero() {
                             </span>
                         </h1>
 
-                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
                             {profile.tagline}
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                             <a
                                 href="#projects"
                                 className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(var(--primary),0.3)] hover:shadow-[0_0_30px_rgba(var(--primary),0.5)]"
@@ -91,7 +90,7 @@ export default function Hero() {
                             </a>
                         </div>
 
-                        <div className="flex justify-center lg:justify-start gap-6">
+                        <div className="flex justify-center gap-6">
                             <a
                                 href={profile.socials.github}
                                 target="_blank"
@@ -114,23 +113,6 @@ export default function Hero() {
                             >
                                 <Mail className="w-6 h-6" />
                             </a>
-                        </div>
-                    </motion.div>
-
-                    {/* Hero Image */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8, x: 20 }}
-                        animate={{ opacity: 1, scale: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="flex-1 relative w-full max-w-[500px] lg:max-w-none"
-                    >
-                        <div className="relative w-full aspect-square animate-float">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-[80px] -z-10" />
-                            <img
-                                src={getAssetPath("/hero-avatar.png")}
-                                alt="Abstract Tech Avatar"
-                                className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(var(--primary),0.3)]"
-                            />
                         </div>
                     </motion.div>
                 </div>
