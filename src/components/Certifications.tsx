@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import { certifications } from "@/data/certifications";
 import { Award, ShieldCheck, ExternalLink } from "lucide-react";
 
@@ -36,7 +37,14 @@ export default function Certifications() {
                                     rel="noopener noreferrer"
                                     className="block h-full"
                                 >
-                                    <div className="relative h-full bg-card border border-white/5 rounded-xl p-6 hover:border-primary/30 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(var(--primary),0.1)]">
+                                    <Tilt
+                                        tiltMaxAngleX={5}
+                                        tiltMaxAngleY={5}
+                                        scale={1.02}
+                                        glareEnable={true}
+                                        glareMaxOpacity={0.1}
+                                        className="relative h-full bg-card border border-white/5 rounded-xl p-6 hover:border-primary/30 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(var(--primary),0.1)]"
+                                    >
                                         <div className="absolute top-4 right-4 lg:opacity-0 lg:group-hover:opacity-100 opacity-100 transition-opacity duration-300">
                                             <div className="flex items-center gap-1 text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full border border-primary/20">
                                                 <span>Verify</span>
@@ -57,10 +65,17 @@ export default function Certifications() {
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Tilt>
                                 </a>
                             ) : (
-                                <div className="relative h-full bg-card border border-white/5 rounded-xl p-6 hover:border-primary/30 transition-all duration-300">
+                                <Tilt
+                                    tiltMaxAngleX={5}
+                                    tiltMaxAngleY={5}
+                                    scale={1.02}
+                                    glareEnable={true}
+                                    glareMaxOpacity={0.1}
+                                    className="relative h-full bg-card border border-white/5 rounded-xl p-6 hover:border-primary/30 transition-all duration-300"
+                                >
                                     <div className="flex items-start gap-4">
                                         <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                                             <Award className="w-6 h-6" />
@@ -75,7 +90,7 @@ export default function Certifications() {
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </Tilt>
                             )}
                         </motion.div>
                     ))}

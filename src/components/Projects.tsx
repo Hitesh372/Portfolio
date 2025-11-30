@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
+import Tilt from "react-parallax-tilt";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
@@ -30,71 +31,79 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative rounded-2xl bg-card border border-white/10 overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
                         >
-                            <div className="relative p-8">
-                                <div className="flex justify-between items-start mb-6">
-                                    <div className="p-3 rounded-xl bg-primary/10 text-primary">
-                                        <ArrowUpRight className="w-6 h-6" />
-                                    </div>
-                                    <div className="flex gap-3">
-                                        {project.githubUrl && (
-                                            <a
-                                                href={project.githubUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="relative group/btn p-2 rounded-full bg-white/5 hover:bg-primary/10 hover:text-primary text-muted-foreground transition-all duration-300 lg:hover:w-24 lg:w-9 w-24 h-9 flex items-center justify-center overflow-hidden"
-                                            >
-                                                <div className="absolute inset-0 flex items-center justify-center lg:group-hover/btn:opacity-0 lg:opacity-100 opacity-0 transition-opacity duration-300">
-                                                    <Github className="w-5 h-5" />
-                                                </div>
-                                                <div className="absolute inset-0 flex items-center justify-center lg:opacity-0 lg:group-hover/btn:opacity-100 opacity-100 transition-opacity duration-300">
-                                                    <span className="text-xs font-medium mr-1">Verify</span>
-                                                    <ExternalLink className="w-3 h-3" />
-                                                </div>
-                                            </a>
-                                        )}
-                                        {project.demoUrl && (
-                                            <a
-                                                href={project.demoUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="p-2 rounded-full bg-white/5 hover:bg-primary/10 hover:text-primary text-muted-foreground transition-colors"
-                                            >
-                                                <ExternalLink className="w-5 h-5" />
-                                            </a>
-                                        )}
-                                    </div>
-                                </div>
-
-                                <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
-                                    {project.title}
-                                </h3>
-
-                                <p className="text-muted-foreground mb-6 leading-relaxed">
-                                    {project.description}
-                                </p>
-
-                                <div className="space-y-3 mb-8">
-                                    {project.achievements.map((achievement, i) => (
-                                        <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground/80">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                            {achievement}
+                            <Tilt
+                                tiltMaxAngleX={5}
+                                tiltMaxAngleY={5}
+                                scale={1.02}
+                                glareEnable={true}
+                                glareMaxOpacity={0.1}
+                                className="group relative h-full rounded-2xl bg-card border border-white/10 overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+                            >
+                                <div className="relative p-8 h-full flex flex-col">
+                                    <div className="flex justify-between items-start mb-6">
+                                        <div className="p-3 rounded-xl bg-primary/10 text-primary">
+                                            <ArrowUpRight className="w-6 h-6" />
                                         </div>
-                                    ))}
-                                </div>
+                                        <div className="flex gap-3">
+                                            {project.githubUrl && (
+                                                <a
+                                                    href={project.githubUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="relative group/btn p-2 rounded-full bg-white/5 hover:bg-primary/10 hover:text-primary text-muted-foreground transition-all duration-300 lg:hover:w-24 lg:w-9 w-24 h-9 flex items-center justify-center overflow-hidden"
+                                                >
+                                                    <div className="absolute inset-0 flex items-center justify-center lg:group-hover/btn:opacity-0 lg:opacity-100 opacity-0 transition-opacity duration-300">
+                                                        <Github className="w-5 h-5" />
+                                                    </div>
+                                                    <div className="absolute inset-0 flex items-center justify-center lg:opacity-0 lg:group-hover/btn:opacity-100 opacity-100 transition-opacity duration-300">
+                                                        <span className="text-xs font-medium mr-1">Verify</span>
+                                                        <ExternalLink className="w-3 h-3" />
+                                                    </div>
+                                                </a>
+                                            )}
+                                            {project.demoUrl && (
+                                                <a
+                                                    href={project.demoUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="p-2 rounded-full bg-white/5 hover:bg-primary/10 hover:text-primary text-muted-foreground transition-colors"
+                                                >
+                                                    <ExternalLink className="w-5 h-5" />
+                                                </a>
+                                            )}
+                                        </div>
+                                    </div>
 
-                                <div className="flex flex-wrap gap-2">
-                                    {project.techTags.map((tag) => (
-                                        <span
-                                            key={tag}
-                                            className="px-3 py-1 rounded-md text-xs font-medium bg-white/5 text-muted-foreground border border-white/5"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
+                                    <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+                                        {project.title}
+                                    </h3>
+
+                                    <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
+                                        {project.description}
+                                    </p>
+
+                                    <div className="space-y-3 mb-8">
+                                        {project.achievements.map((achievement, i) => (
+                                            <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground/80">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                                {achievement}
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-2 mt-auto">
+                                        {project.techTags.map((tag) => (
+                                            <span
+                                                key={tag}
+                                                className="px-3 py-1 rounded-md text-xs font-medium bg-white/5 text-muted-foreground border border-white/5"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            </Tilt>
                         </motion.div>
                     ))}
                 </div>
