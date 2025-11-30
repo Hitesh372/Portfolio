@@ -7,7 +7,7 @@ export const profile = {
     bio: "As a seasoned Quality Analyst, I possess a demonstrated history of enhancing software quality and reliability across diverse projects over the past three years. Recognized for proactive problem-solving, meticulous attention to detail, and a commitment to excellence. Proficient in a range of testing methodologies and techniques.",
     socials: {
         github: "https://github.com/Hitesh-jangid372",
-        linkedin: "https://linkedin.com/in/hitesh-jangid-placeholder", // Placeholder as not provided
+        linkedin: "https://www.linkedin.com/in/hitesh-jangid-b44561130/",
         email: "mailto:Jangidh212@gmail.com",
         phone: "tel:+916378732510",
     },

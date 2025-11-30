@@ -20,7 +20,6 @@ export const techStack: TechCategory[] = [
             { name: "Cucumber", description: "BDD framework", githubUrl: "https://github.com/Hitesh-jangid372?tab=repositories&q=cucumber" },
             { name: "Appium", description: "Mobile automation", githubUrl: "https://github.com/Hitesh372/Appium-scripts" },
             { name: "Pytest", description: "Python testing framework", githubUrl: "https://github.com/Hitesh-jangid372?tab=repositories&q=pytest" },
-            { name: "WebdriverIO", description: "Next-gen browser automation", githubUrl: "" },
             { name: "Capybara", description: "Acceptance test framework", githubUrl: "" },
             { name: "RSpec", description: "Behavior Driven Development", githubUrl: "" },
         ],
@@ -30,6 +29,8 @@ export const techStack: TechCategory[] = [
         items: [
             { name: "Java", description: "Object-oriented programming", githubUrl: "https://github.com/Hitesh-jangid372?tab=repositories&q=java" },
             { name: "TypeScript", description: "Typed JavaScript", githubUrl: "https://github.com/Hitesh372/Typescript-practice" },
+            { name: "Python", description: "Versatile programming language", githubUrl: "" },
+            { name: "JavaScript", description: "Web scripting language", githubUrl: "" },
             { name: "Ruby", description: "Dynamic, open source language", githubUrl: "" },
             { name: "DSA", description: "Data Structures & Algorithms", githubUrl: "https://github.com/Hitesh-jangid372?tab=repositories&q=dsa" },
         ],
