@@ -65,17 +65,17 @@ export const projects: Project[] = [
             "Evaluates selector effectiveness",
             "User-friendly interface for QA engineers",
         ],
-        githubUrl: "", // Private
+        githubUrl: "",
     },
     {
         title: "Smart Recorder App",
-        description: "Desktop application to record user actions and generate automated test scripts in Ruby/Puppeteer.",
+        description: "Desktop application to record user actions and generate automated test scripts in Ruby.",
         techTags: ["Node.js", "Puppeteer", "Electron", "JavaScript"],
         achievements: [
             "Records user interactions in real-time",
             "Generates framework-specific Ruby scripts",
             "Exportable executable for easy distribution",
         ],
-        githubUrl: "", // EXE available offline
+        githubUrl: "",
     },
 ];
