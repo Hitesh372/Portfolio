@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Phone, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { profile } from "@/data/profile";
 import { useState } from "react";
 
@@ -14,22 +15,34 @@ export default function Contact() {
     });
     const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus("submitting");
 
-        // Simulate network delay for better UX
-        setTimeout(() => {
-            const mailtoLink = `mailto:${profile.contact.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-            window.location.href = mailtoLink;
-            setStatus("success");
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                },
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+            );
 
-            // Reset form after delay
+            setStatus("success");
+            setFormData({ name: "", email: "", subject: "", message: "" });
+
             setTimeout(() => {
                 setStatus("idle");
-                setFormData({ name: "", email: "", subject: "", message: "" });
             }, 3000);
-        }, 1000);
+        } catch (error) {
+            console.error("Failed to send email:", error);
+            setStatus("idle");
+            alert("Failed to send message. Please try again or email me directly.");
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
