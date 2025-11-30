@@ -74,10 +74,10 @@ export default function TechStack() {
                                                 {item.name}
                                             </h3>
                                             <div className="relative">
-                                                <div className="text-muted-foreground group-hover:opacity-0 transition-opacity duration-300">
+                                                <div className="text-muted-foreground hidden lg:block lg:group-hover:opacity-0 transition-opacity duration-300">
                                                     <Github className="w-5 h-5" />
                                                 </div>
-                                                <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <div className="lg:absolute lg:top-0 lg:right-0 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                                                     <div className="flex items-center gap-1 text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full border border-primary/20 whitespace-nowrap">
                                                         <span>Verify</span>
                                                         <ExternalLink className="w-3 h-3" />

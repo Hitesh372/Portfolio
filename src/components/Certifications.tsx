@@ -37,7 +37,7 @@ export default function Certifications() {
                                     className="block h-full"
                                 >
                                     <div className="relative h-full bg-card border border-white/5 rounded-xl p-6 hover:border-primary/30 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(var(--primary),0.1)]">
-                                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute top-4 right-4 lg:opacity-0 lg:group-hover:opacity-100 opacity-100 transition-opacity duration-300">
                                             <div className="flex items-center gap-1 text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full border border-primary/20">
                                                 <span>Verify</span>
                                                 <ExternalLink className="w-3 h-3" />
