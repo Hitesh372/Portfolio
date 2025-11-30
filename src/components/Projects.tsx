@@ -46,7 +46,7 @@ export default function Projects() {
                                             <ArrowUpRight className="w-6 h-6" />
                                         </div>
                                         <div className="flex gap-3">
-                                            {project.githubUrl ? (
+                                            {project.githubUrl && (
                                                 <a
                                                     href={project.githubUrl}
                                                     target="_blank"
@@ -61,11 +61,6 @@ export default function Projects() {
                                                         <ExternalLink className="w-3 h-3" />
                                                     </div>
                                                 </a>
-                                            ) : (
-                                                <div className="px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs font-medium text-muted-foreground/70 flex items-center gap-2 cursor-not-allowed">
-                                                    <Github className="w-4 h-4 opacity-50" />
-                                                    <span>Private Tool</span>
-                                                </div>
                                             )}
                                             {project.demoUrl && (
                                                 <a
