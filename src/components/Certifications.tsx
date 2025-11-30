@@ -47,7 +47,7 @@ export default function Certifications() {
                                             <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                                                 <Award className="w-6 h-6" />
                                             </div>
-                                            <div>
+                                            <div className="pr-20">
                                                 <h3 className="font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">
                                                     {cert.name}
                                                 </h3>
