@@ -8,19 +8,19 @@ export interface EducationItem {
 export const education: EducationItem[] = [
     {
         degree: "Bachelor of Technology",
-        institution: "University/College", // Placeholder
+        institution: "VIT Jaipur",
         year: "2020",
         grade: "7 CGPA",
     },
     {
         degree: "Senior Secondary",
-        institution: "School Board", // Placeholder
+        institution: "RBSE",
         year: "2016",
         grade: "78.60 %",
     },
     {
         degree: "Secondary",
-        institution: "School Board", // Placeholder
+        institution: "RBSE",
         year: "2014",
         grade: "79.16 %",
     },
