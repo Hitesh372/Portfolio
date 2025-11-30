@@ -85,72 +85,72 @@
 
 @layer base {
   :root {
-    /* White & Black Theme */
-    /* Pure White Base */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* Cyber-Noir Theme */
+    /* Deepest Purple/Black Background */
+    --background: 260 50% 5%;
+    --foreground: 280 20% 98%;
 
-    /* Light Gray Cards */
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 0%;
+    /* Darker Cards */
+    --card: 260 50% 8%;
+    --card-foreground: 280 20% 98%;
 
-    --popover: 0 0% 98%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 260 50% 8%;
+    --popover-foreground: 280 20% 98%;
 
-    /* Pure Black Primary */
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    /* Neon Cyan Primary */
+    --primary: 180 100% 50%;
+    --primary-foreground: 260 50% 5%;
 
-    /* Medium Gray Secondary */
-    --secondary: 0 0% 60%;
-    --secondary-foreground: 0 0% 100%;
+    /* Neon Purple Secondary */
+    --secondary: 280 80% 60%;
+    --secondary-foreground: 260 50% 5%;
 
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 260 30% 15%;
+    --muted-foreground: 280 20% 70%;
 
-    /* Dark Gray Accent */
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 100%;
+    /* Neon Pink Accent */
+    --accent: 320 100% 60%;
+    --accent-foreground: 260 50% 5%;
 
-    --destructive: 0 0% 40%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 280 20% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --border: 260 30% 20%;
+    --input: 260 30% 20%;
+    --ring: 180 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.3rem;
   }
 
   .dark {
-    /* Force White & Black Theme in Dark Mode too */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* Cyber-Noir Theme (Dark Mode match) */
+    --background: 260 50% 5%;
+    --foreground: 280 20% 98%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 0%;
+    --card: 260 50% 8%;
+    --card-foreground: 280 20% 98%;
 
-    --popover: 0 0% 98%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 260 50% 8%;
+    --popover-foreground: 280 20% 98%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 260 50% 5%;
 
-    --secondary: 0 0% 60%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 280 80% 60%;
+    --secondary-foreground: 260 50% 5%;
 
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 260 30% 15%;
+    --muted-foreground: 280 20% 70%;
 
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 320 100% 60%;
+    --accent-foreground: 260 50% 5%;
 
-    --destructive: 0 0% 40%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 280 20% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --border: 260 30% 20%;
+    --input: 260 30% 20%;
+    --ring: 180 100% 50%;
   }
 }
 
@@ -161,37 +161,16 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Cyber Grid Background */
     background-image:
-      radial-gradient(circle at 50% 0%, hsl(var(--primary) / 0.15), transparent 70%),
-      radial-gradient(circle at 80% 20%, hsl(var(--secondary) / 0.1), transparent 50%),
-      linear-gradient(to bottom, transparent, hsl(var(--background)));
+      linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
     background-attachment: fixed;
-    position: relative;
+    min-height: 100vh;
   }
 
-  /* Starfield Effect */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image:
-      radial-gradient(1px 1px at 10% 10%, white 100%, transparent),
-      radial-gradient(1px 1px at 20% 20%, white 100%, transparent),
-      radial-gradient(2px 2px at 30% 30%, rgba(255, 255, 255, 0.5) 100%, transparent),
-      radial-gradient(1px 1px at 40% 40%, white 100%, transparent),
-      radial-gradient(1px 1px at 50% 50%, white 100%, transparent),
-      radial-gradient(2px 2px at 60% 60%, rgba(255, 255, 255, 0.5) 100%, transparent),
-      radial-gradient(1px 1px at 70% 70%, white 100%, transparent),
-      radial-gradient(1px 1px at 80% 80%, white 100%, transparent),
-      radial-gradient(1px 1px at 90% 90%, white 100%, transparent);
-    background-size: 550px 550px;
-    opacity: 0.3;
-    z-index: -1;
-  }
+
 
   html {
     scroll-behavior: smooth;
@@ -199,15 +178,25 @@
 }
 
 @layer utilities {
+
+  /* Cyber Utilities */
   .glass {
-    @apply bg-white/60 backdrop-blur-md border border-black/10;
+    @apply bg-black/60 backdrop-blur-md border border-primary/20;
   }
 
   .glass-card {
-    @apply bg-card border border-black/5 shadow-lg hover:border-black/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply bg-card border border-white/5 shadow-lg hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .glass-nav {
+    @apply bg-background/90 backdrop-blur-md border-b border-white/5;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
   }
 
   .text-glow {
-    text-shadow: 0 0 20px rgba(var(--primary), 0.5);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5), 0 0 20px rgba(0, 243, 255, 0.3);
   }
 }
