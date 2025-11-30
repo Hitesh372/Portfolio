@@ -56,4 +56,26 @@ export const projects: Project[] = [
         ],
         githubUrl: "https://github.com/Hitesh372/Playwright-scripts",
     },
+    {
+        title: "Smart Xpath Extension",
+        description: "Chrome extension similar to SelectorsHub that automatically generates robust XPaths based on element effectiveness.",
+        techTags: ["JavaScript", "Chrome Extension", "HTML/CSS"],
+        achievements: [
+            "Generates optimized XPaths automatically",
+            "Evaluates selector effectiveness",
+            "User-friendly interface for QA engineers",
+        ],
+        githubUrl: "", // Private
+    },
+    {
+        title: "Smart Recorder App",
+        description: "Desktop application to record user actions and generate automated test scripts in Ruby/Puppeteer.",
+        techTags: ["Node.js", "Puppeteer", "Electron", "JavaScript"],
+        achievements: [
+            "Records user interactions in real-time",
+            "Generates framework-specific Ruby scripts",
+            "Exportable executable for easy distribution",
+        ],
+        githubUrl: "", // EXE available offline
+    },
 ];
