@@ -70,9 +70,16 @@ export default function TechStack() {
                                 >
                                     <div className="relative h-full bg-card border border-white/10 rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(var(--primary),0.1)] cursor-pointer">
                                         <div className="flex justify-between items-start mb-4">
-                                            <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                                                {item.name}
-                                            </h3>
+                                            <div className="flex items-center gap-3">
+                                                {item.icon && (
+                                                    <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                                                        <item.icon className="w-6 h-6" />
+                                                    </div>
+                                                )}
+                                                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                                                    {item.name}
+                                                </h3>
+                                            </div>
                                             <div className="relative">
                                                 <div className="text-muted-foreground hidden lg:block lg:group-hover:opacity-0 transition-opacity duration-300">
                                                     <Github className="w-5 h-5" />
@@ -96,9 +103,16 @@ export default function TechStack() {
                             ) : (
                                 <div className="relative h-full bg-card border border-white/10 rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(var(--primary),0.1)]">
                                     <div className="flex justify-between items-start mb-4">
-                                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                                            {item.name}
-                                        </h3>
+                                        <div className="flex items-center gap-3">
+                                            {item.icon && (
+                                                <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                                                    <item.icon className="w-6 h-6" />
+                                                </div>
+                                            )}
+                                            <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                                                {item.name}
+                                            </h3>
+                                        </div>
                                     </div>
                                     <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
                                         {item.description}
