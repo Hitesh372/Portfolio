@@ -1,40 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, GitFork, Book } from "lucide-react";
+import { Star, GitFork, Book, ExternalLink } from "lucide-react";
 
 const pinnedRepos = [
     {
         name: "selenium-framework",
         description: "A robust Selenium framework with Java and TestNG.",
         language: "Java",
-        stars: 12,
-        forks: 4,
-        url: "https://github.com/Hitesh-jangid372/selenium-framework",
+        stars: 0,
+        forks: 0,
+        url: "https://github.com/Hitesh372/HRM-automation-using-Selenium-and-Java",
     },
     {
         name: "playwright-typescript",
         description: "End-to-end testing with Playwright and TypeScript.",
         language: "TypeScript",
-        stars: 8,
-        forks: 2,
-        url: "https://github.com/Hitesh-jangid372/playwright-typescript",
+        stars: 0,
+        forks: 0,
+        url: "https://github.com/Hitesh372/Playwright-scripts",
     },
-    {
-        name: "api-testing-restassured",
-        description: "REST API testing framework using RestAssured.",
-        language: "Java",
-        stars: 15,
-        forks: 5,
-        url: "https://github.com/Hitesh-jangid372/api-testing-restassured",
-    },
+
     {
         name: "performance-jmeter",
         description: "JMeter scripts for performance testing.",
         language: "JMeter",
-        stars: 5,
-        forks: 1,
-        url: "https://github.com/Hitesh-jangid372/performance-jmeter",
+        stars: 0,
+        forks: 0,
+        url: "https://github.com/Hitesh372/Performance-Testing-with-Jmeter",
     },
 ];
 
@@ -88,13 +81,18 @@ export default function GitHubHighlight() {
                                     {repo.forks}
                                 </div>
                             </div>
+                            <div className="mt-4 pt-4 border-t border-border flex justify-end">
+                                <span className="text-xs font-medium text-primary flex items-center gap-1 group-hover:underline">
+                                    View Code <ExternalLink className="w-3 h-3" />
+                                </span>
+                            </div>
                         </motion.a>
                     ))}
                 </div>
 
                 <div className="text-center mt-10">
                     <a
-                        href="https://github.com/Hitesh-jangid372"
+                        href="https://github.com/Hitesh372"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline font-medium"

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import { techStack } from "@/data/techStack";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -69,6 +69,12 @@ export default function TechStack() {
                                     className="block h-full"
                                 >
                                     <div className="relative h-full bg-card border border-white/10 rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(var(--primary),0.1)] cursor-pointer">
+                                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <div className="flex items-center gap-1 text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full border border-primary/20">
+                                                <span>Verify</span>
+                                                <ExternalLink className="w-3 h-3" />
+                                            </div>
+                                        </div>
                                         <div className="flex justify-between items-start mb-4">
                                             <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                                                 {item.name}
