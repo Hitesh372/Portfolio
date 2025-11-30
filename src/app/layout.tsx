@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-
+import AestheticCursor from "@/components/AestheticCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className={`${inter.variable} ${outfit.variable} font-sans antialiased selection:bg-primary/30 selection:text-primary-foreground`}>
-
+        <AestheticCursor />
         <ScrollProgress />
         {children}
       </body>
